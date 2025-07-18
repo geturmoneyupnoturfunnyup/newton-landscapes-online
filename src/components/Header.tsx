@@ -20,11 +20,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <a href="/">
               <img 
                 src="/lovable-uploads/b23689e7-fc34-427f-ba07-33343c332385.png" 
                 alt="J&B Landscaping Logo" 
-                className="h-14 md:h-18 w-auto"
+                className="h-16 md:h-20 w-auto"
               />
             </a>
           </div>
