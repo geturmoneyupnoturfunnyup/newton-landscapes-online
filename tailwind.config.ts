@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Custom earth-tone colors
+				'earth-green': 'hsl(var(--earth-green))',
+				'earth-brown': 'hsl(var(--earth-brown))',
+				'stone-gray': 'hsl(var(--stone-gray))',
+				'warm-beige': 'hsl(var(--warm-beige))',
+				'moss-green': 'hsl(var(--moss-green))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
