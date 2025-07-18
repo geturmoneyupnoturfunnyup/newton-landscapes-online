@@ -40,13 +40,6 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <a
-              href="tel:973-948-7167"
-              className="flex items-center gap-2 text-primary hover:text-moss-green transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              <span className="font-medium">(973) 948-7167</span>
-            </a>
             <Button 
               asChild
               className="bg-gradient-to-r from-primary to-moss-green text-primary-foreground hover:shadow-[var(--shadow-earth)]"

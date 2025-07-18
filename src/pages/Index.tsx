@@ -41,6 +41,18 @@ const Index = () => {
     {
       text: "Wow they brought my garden and yard back! I can't say enough about John and his team!",
       author: "Sarah Gibson"
+    },
+    {
+      text: "I hired John to fix up some of my natural stone walls that were starting to fall and also to do a good spring cleaning. He showed up on time and when he said he would and him and his crew did a great job!! It’s so nice to be happy when work is complete! I would recommend 😌",
+      author: "Kellene Addison"
+    },
+    {
+      text: "Hired to spring clean up and mulch all my flower beds. His workers worked hard and diligently. The yard and flowers bed looks wonderful! ",
+      author: "Michelle Reynolds"
+    },
+    {
+      text: "John and his team are a great group – you need not look any further. I began using his services over 20 years ago when I took over as manager of two residential senior citizen properties. He transformed the property from an ugly overgrown weed patch to a beautiful flowering oasis that everyone loved and enjoyed.",
+      author: "Ken Wessler"
     }
   ];
 
@@ -211,10 +223,9 @@ const Index = () => {
                 <a href="/contact">Get Free Quote</a>
               </Button>
               <Button 
-                variant="outline" 
                 size="lg" 
                 asChild
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               >
                 <a href="tel:973-948-7167">Call (973) 948-7167</a>
               </Button>

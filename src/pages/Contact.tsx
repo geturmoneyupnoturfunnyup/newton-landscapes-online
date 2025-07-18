@@ -7,13 +7,27 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, Clock, MapPin } from "lucide-react";
 
+function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+  const formData = new FormData(event.currentTarget);
+  console.log(formData);
+  let name = formData.get("name");
+  let phoneNumber = formData.get("phone");
+  let email = formData.get("email");
+  let projectType = formData.get("project-type");
+  let projectDetails = formData.get("message");
+  let subject = "Requesting a Quote - " + name;
+  let message = `\nPhone Number: ${phoneNumber}\nEmail: ${email}\nProject Type: ${projectType}\nProject Details: ${projectDetails}`;
+  {/* Open URL*/}
+  window.open("mailto:jblandscape1@gmail.com?subject=" + subject + "&body=" + message);
+}
 const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-16">
-        <div className="max-w-6xl mx-auto">
+      <main className="mx-auto px-4 py-16">
+        <div className="flex-row justify-center items-center">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Contact Us
@@ -24,11 +38,11 @@ const Contact = () => {
             </p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="flex flex-col justify-center gap-12">
             {/* Contact Form */}
             <Card className="p-8 shadow-[var(--shadow-soft)]">
               <h2 className="text-2xl font-semibold text-primary mb-6">Request a Quote</h2>
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
@@ -53,7 +67,7 @@ const Contact = () => {
                 
                 <div>
                   <label htmlFor="project-type" className="block text-sm font-medium text-foreground mb-2">
-                    Project Type
+                    Project Type *
                   </label>
                   <Select>
                     <SelectTrigger>
@@ -71,22 +85,22 @@ const Contact = () => {
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Project Details
+                    Project Details *
                   </label>
                   <Textarea 
                     id="message" 
                     placeholder="Tell us about your project, including size, timeline, and any specific requirements..."
                     rows={5}
+                    required
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full bg-gradient-to-r from-primary to-moss-green text-primary-foreground hover:shadow-[var(--shadow-earth)]"
-                >
-                  Send Message
-                </Button>
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-gradient-to-r from-primary to-moss-green text-primary-foreground hover:shadow-[var(--shadow-earth)]"
+>
+                    Send Message
+                  </Button>
               </form>
             </Card>
             
@@ -147,13 +161,11 @@ const Contact = () => {
               </Card>
               
               {/* Map Placeholder */}
-              <Card className="p-6 shadow-[var(--shadow-soft)]">
-                <h3 className="text-xl font-semibold text-primary mb-4">Find Us</h3>
-                <div className="aspect-video bg-warm-beige rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-8 w-8 text-moss-green mx-auto mb-2" />
-                    <p className="text-muted-foreground">Newton, NJ</p>
-                    <p className="text-sm text-muted-foreground">Interactive map coming soon</p>
+              <Card className="p-6 shadow-[var(--shadow-soft)] w-fit h-fit mx-auto">
+                <h3 className="text-xl font-semibold text-primary mb-4 w-fit h-fit">Find Us</h3>
+                <div className="aspect-video bg-warm-beige rounded-lg flex items-center justify-center w-fit h-fit">
+                  <div className="text-center overflow-hidden w-fit h-fit">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192368.89560069988!2d-75.10703150546874!3d41.11784509999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c365074cdb8825%3A0xc7bb2f563c3fce9f!2sJ%26B%20Landscape%20Inc!5e0!3m2!1sen!2sus!4v1752860800125!5m2!1sen!2sus" ></iframe>
                   </div>
                 </div>
               </Card>
